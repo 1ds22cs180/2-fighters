@@ -19,11 +19,18 @@ YELLOW = (255, 255, 0)
 # define font
 font = pygame.font.Font(None, 36)
 
+Warr_Size = 162
+Warr_Data = [Warr_Size]
+Wiz_Size = 250
+Wiz_Data = [Wiz_Size]
 
 bg_image = pygame.image.load("assets/background/bg.png").convert_alpha()
 
-warrior_image = pygame.image.load("assets/warriors/warrior.png").convert_alpha()
-wizard_image = pygame.image.load("assets/wizard/sprites/wizard.png").convert_alpha()
+warrior_sheet = pygame.image.load("assets/warriors/warrior.png").convert_alpha()
+wizard_sheet = pygame.image.load("assets/wizard/sprites/wizard.png").convert_alpha()
+
+Warr_Anim_Steps = [10, 8, 1, 7, 7, 3, 7]
+Wiz_Anim_Steps = [8, 8, 1, 8, 8, 3, 7]
 
 def draw_bg():
     scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -35,8 +42,8 @@ def draw_health_bar(health,x,y):
     pygame.draw.rect(screen, RED, (x,y,400,30))
     pygame.draw.rect(screen, YELLOW, (x,y,400 * ratio,30))
 
-f1 = Fighter(100, 310)
-f2 = Fighter(700, 310)
+f1 = Fighter(100, 310, Warr_Data,warrior_sheet, Warr_Anim_Steps)
+f2 = Fighter(700, 310, Wiz_Data,wizard_sheet, Wiz_Anim_Steps)
 
 run = True
 while run:
