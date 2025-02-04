@@ -4,6 +4,7 @@ Hello Guys. This is a 2d game made using python library called "pygame".
 Anyone can play with their friends as many times as they want (1v1).
 
 Controls :
+
 person 1
 
  -> w for jump
